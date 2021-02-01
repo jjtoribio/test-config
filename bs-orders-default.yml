@@ -1,0 +1,35 @@
+springdoc:
+  api-docs:
+    enabled: true    
+  swagger-ui.path: /swagger-ui.html
+
+spring:
+  sleuth:
+    reactor:
+      enabled: true      
+  zipkin:
+    enabled: false
+  cloud:
+    discovery:
+      enabled: true
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+es:
+  microservices:
+    tests:
+      orders:
+        orders-config:
+          base-url: http://orders:8082
+          endpoint-url: /orders
+        phones-config:          
+          base-url: http://phones:8081
+          endpoint-url: /phones
+
+logging:
+  file: /tmp/${spring.application.name}.log  
+  level:    
+    es.microservices: info    
+    root: info 
+    

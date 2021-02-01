@@ -1,0 +1,52 @@
+server:
+  servlet:
+    context-path: /
+  error:
+    include-message: always
+
+spring:  
+  jackson:
+    default-property-inclusion: non-null
+    deserialization:
+      fail-on-unknown-properties: false
+  cloud:
+    config:
+      allowOverride: true
+      failFast: true
+      overrideNone: true
+      overrideSystemProperties: true
+      uri: ${SPRING_CONFIG_URI:http://localhost:8888} 
+  sleuth:
+    sampler:
+      rate: 100000   
+    reactor:
+      enabled: true      
+    rxjava:
+      schedulers:
+        hook: 
+          enabled: false
+  zipkin:
+    baseUrl: http://zipkin-server:9411
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      cluster: DEFAULT
+    preferIpAddress: true
+
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 30000
+
+logging:
+  config: classpath:logback-spring.xml
+  file: /tmp/${spring.application.name}.log  
+  level:    
+    es.microservices: info    
+    root: info 

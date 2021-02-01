@@ -1,0 +1,22 @@
+springdoc:
+  api-docs:
+    enabled: true    
+  swagger-ui.path: /swagger-ui.html
+    
+spring:
+  data:
+    mongodb:
+#      uri: mongodb+srv://goliath-development:9e5Q8KibcOCJovvw@mongo-dev-kungh.gcp.mongodb.net/goliath
+      repositories:
+        type: reactive
+  sleuth:
+    reactor:
+      enabled: true
+  zipkin:
+    enabled: false
+
+  cloud:
+    discovery:
+      enabled: true
+
+    
