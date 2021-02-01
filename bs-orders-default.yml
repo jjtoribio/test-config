@@ -3,6 +3,9 @@ springdoc:
     enabled: true    
   swagger-ui.path: /swagger-ui.html
 
+server:
+  port: 8081
+
 spring:
   sleuth:
     reactor:
