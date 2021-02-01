@@ -6,7 +6,7 @@ springdoc:
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:admin@localhost:27017/test
+      uri: mongodb://localhost:27017/test
       repositories:
         type: reactive
   sleuth:

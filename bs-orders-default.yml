@@ -6,7 +6,7 @@ springdoc:
 spring:
   sleuth:
     reactor:
-      enabled: true      
+      enabled: false      
   zipkin:
     enabled: false
   cloud:
@@ -21,10 +21,10 @@ es:
     tests:
       orders:
         orders-config:
-          base-url: http://orders:8083
+          base-url: http://daas-orders:8083
           endpoint-url: /orders
         phones-config:          
-          base-url: http://phones:8082
+          base-url: http://daas-phones:8082
           endpoint-url: /phones
 
 logging:
