@@ -21,10 +21,10 @@ es:
     tests:
       orders:
         orders-config:
-          base-url: http://orders:8082
+          base-url: http://orders:8083
           endpoint-url: /orders
         phones-config:          
-          base-url: http://phones:8081
+          base-url: http://phones:8082
           endpoint-url: /phones
 
 logging:
