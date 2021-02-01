@@ -9,7 +9,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/test
+      uri: mongodb://my-mongodb:27017/test
       repositories:
         type: reactive
   sleuth:
